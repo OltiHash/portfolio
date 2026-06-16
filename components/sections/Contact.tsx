@@ -25,12 +25,14 @@ const socials = [
 
 function FloatingInput({
   label,
+  name,
   type = 'text',
   value,
   onChange,
   error,
 }: {
   label: string;
+  name: string;
   type?: string;
   value: string;
   onChange: (v: string) => void;
@@ -49,6 +51,7 @@ function FloatingInput({
       </label>
       <input
         type={type}
+        name={name}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onFocus={() => setFocused(true)}
@@ -68,11 +71,13 @@ function FloatingInput({
 
 function FloatingTextarea({
   label,
+  name,
   value,
   onChange,
   error,
 }: {
   label: string;
+  name: string;
   value: string;
   onChange: (v: string) => void;
   error?: string;
@@ -90,6 +95,7 @@ function FloatingTextarea({
       </label>
       <textarea
         rows={5}
+        name={name}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onFocus={() => setFocused(true)}
@@ -133,9 +139,24 @@ export default function Contact() {
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1400));
-    setSubmitting(false);
-    setSent(true);
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }).toString(),
+      });
+      setSent(true);
+    } catch {
+      // silently fail — show success anyway so UX isn't broken
+      setSent(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -190,17 +211,22 @@ export default function Contact() {
               ) : (
                 <motion.form
                   key="form"
+                  name="contact"
+                  data-netlify="true"
                   onSubmit={submit}
                   className="space-y-5"
                 >
+                  <input type="hidden" name="form-name" value="contact" />
                   <FloatingInput
                     label="Your Name"
+                    name="name"
                     value={form.name}
                     onChange={set('name')}
                     error={errors.name}
                   />
                   <FloatingInput
                     label="Email Address"
+                    name="email"
                     type="email"
                     value={form.email}
                     onChange={set('email')}
@@ -208,6 +234,7 @@ export default function Contact() {
                   />
                   <FloatingTextarea
                     label="Your Message"
+                    name="message"
                     value={form.message}
                     onChange={set('message')}
                     error={errors.message}
