@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+
+# Olti Hashani — Developer Portfolio
+
+**A cinematic, fully animated personal portfolio built with Next.js 16, Tailwind CSS v4, and Framer Motion.**
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion)
+[![Netlify](https://img.shields.io/badge/Netlify-deployed-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://oltihash-portfolio.netlify.app)
+
+**[Live Site →](https://oltihash-portfolio.netlify.app)**
+
+</div>
+
+---
+
+## Features
+
+- **Cinematic loading screen** — animated logo with progress bar before content reveals
+- **Custom cursor** — dual-ring glow cursor that follows the mouse (hidden on touch devices)
+- **Particle field** — floating ambient particles layered behind the Hero section
+- **Glassmorphism UI** — `#060606` dark base with `backdrop-blur` glass cards and electric blue/purple accents
+- **Framer Motion animations** — staggered entrance on every section, triggered on scroll with `viewport: once`
+- **Interactive terminal** — functional CLI with `help`, `about`, `projects`, `skills`, `contact`, and `clear`
+- **Animated stat counters** — numbers count up from zero when scrolled into view
+- **Contact form** — powered by Netlify Forms; messages delivered directly to email
+- **Fully responsive** — optimised for mobile, tablet, and desktop
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router, `output: 'export'`) |
+| UI Library | React 19 |
+| Language | TypeScript 5 (strict) |
+| Styling | Tailwind CSS v4 (CSS-first config, no `tailwind.config`) |
+| Animations | Framer Motion 11 |
+| Icons | lucide-react + custom inline SVG brand icons |
+| Deployment | Netlify — static export served from `out/` |
+
+## Sections
+
+`Hero` · `About` · `Skills` · `Projects` · `Experience` · `Stats` · `Terminal` · `Contact` · `Footer`
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+git clone https://github.com/OltiHash/portfolio.git
+cd portfolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**To personalise the site** — edit one file only:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+lib/data.ts   ← name, bio, skills, projects, experience, stats
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  layout.tsx          # Root layout, metadata, scroll-fix inline script
+  page.tsx            # Entry point — mounts <Portfolio />
+  globals.css         # Tailwind v4 theme + global resets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+components/
+  Portfolio.tsx        # Client root; manages loading state
+  ui/                  # CustomCursor, LoadingScreen, SocialIcons
+  layout/              # Navbar, Footer
+  sections/            # Hero, About, Skills, Projects, Experience,
+                       #   Stats, Terminal, Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+lib/
+  data.ts              # Single source of truth for all content
+hooks/                 # useMousePosition, useScrollProgress, useCountUp, useInView
+types/index.ts         # Shared TypeScript interfaces
+```
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Exported as a static site via `next build` and hosted on Netlify.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```toml
+# netlify.toml
+[build]
+  command = "npm run build"
+  publish = "out"
+```
+
+Contact form submissions are captured by Netlify Forms — zero backend required.
+
+---
+
+<div align="center">
+
+Made by [Olti Hashani](https://oltihash-portfolio.netlify.app) · Prishtina, Kosovo
+
+</div>
