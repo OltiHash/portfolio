@@ -14,7 +14,7 @@ const socials = [
   { Icon: LinkedInIcon, href: personalInfo.linkedin, label: 'LinkedIn' },
   { Icon: XIcon, href: personalInfo.twitter, label: 'Twitter' },
   { Icon: Mail, href: `mailto:${personalInfo.email}`, label: 'Email' },
-];
+].filter((s) => s.href);
 
 export default function Footer() {
   return (

@@ -1,7 +1,7 @@
 import type { Project, Skill, ExperienceItem, StatItem } from '@/types';
 
 export const personalInfo = {
-  name: 'Alex Chen',
+  name: 'Olti Hashani',
   title: 'Full Stack Developer',
   roles: [
     'Full Stack Developer',
@@ -12,11 +12,11 @@ export const personalInfo = {
   bio: "I'm a passionate full-stack developer with 3+ years of experience crafting beautiful, performant web applications. I believe great software is as much about the experience as the functionality.",
   bioExtended:
     'Currently focused on building scalable applications with React and Node.js, with a deep interest in developer tooling, AI integration, and design systems that scale.',
-  email: 'hello@alexchen.dev',
-  location: 'San Francisco, CA',
-  github: 'https://github.com',
-  linkedin: 'https://linkedin.com',
-  twitter: 'https://twitter.com',
+  email: 'oltihashani3@gmail.com',
+  location: 'Prishtina, Kosovo',
+  github: 'https://github.com/OltiHash',
+  linkedin: '',
+  twitter: '',
 };
 
 export const skills: Record<string, Skill[]> = {

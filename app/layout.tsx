@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Chen — Full Stack Developer",
+  title: "Olti Hashani — Full Stack Developer",
   description:
-    "Personal portfolio of Alex Chen — full stack developer specializing in building fast, beautiful, and scalable web applications.",
+    "Personal portfolio of Olti Hashani — full stack developer specializing in building fast, beautiful, and scalable web applications.",
   keywords: ["developer", "portfolio", "full stack", "React", "Next.js", "TypeScript"],
 };
 

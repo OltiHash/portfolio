@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import LoadingScreen from '@/components/ui/LoadingScreen';
 import CustomCursor from '@/components/ui/CustomCursor';
@@ -17,9 +17,23 @@ import Contact from '@/components/sections/Contact';
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    // Prevent browser from restoring last scroll position on revisit
+    if (typeof window !== 'undefined') {
+      history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
+  const handleLoadComplete = () => {
+    setLoading(false);
+    // Ensure we start at the very top once the loading screen exits
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  };
+
   return (
     <>
-      <AnimatePresence>{loading && <LoadingScreen onComplete={() => setLoading(false)} />}</AnimatePresence>
+      <AnimatePresence>{loading && <LoadingScreen onComplete={handleLoadComplete} />}</AnimatePresence>
 
       {!loading && (
         <>

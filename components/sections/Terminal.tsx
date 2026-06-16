@@ -17,9 +17,9 @@ const COMMANDS: Record<string, string> = {
   contact    →  How to reach me
   clear      →  Clear the terminal`,
 
-  about: `Alex Chen  //  Full Stack Developer
+  about: `Olti Hashani  //  Full Stack Developer
 
-  Location   →  San Francisco, CA
+  Location   →  Prishtina, Kosovo
   Experience →  3+ years
   Focus      →  React · Node.js · AI integrations
   Status     →  Open to work`,
@@ -40,10 +40,8 @@ const COMMANDS: Record<string, string> = {
 
   contact: `Get in touch:
 
-  Email     →  hello@alexchen.dev
-  GitHub    →  github.com/alexchen
-  LinkedIn  →  linkedin.com/in/alexchen
-  Portfolio →  alexchen.dev`,
+  Email     →  oltihashani3@gmail.com
+  GitHub    →  github.com/OltiHash`,
 };
 
 const WELCOME = `Welcome to alexchen.dev  [v1.0.0]
