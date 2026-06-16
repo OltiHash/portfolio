@@ -44,7 +44,7 @@ const COMMANDS: Record<string, string> = {
   GitHub    →  github.com/OltiHash`,
 };
 
-const WELCOME = `Welcome to alexchen.dev  [v1.0.0]
+const WELCOME = `Welcome to oltihashani.dev  [v1.0.0]
 Type "help" to see available commands.
 `;
 
@@ -55,9 +55,11 @@ export default function Terminal() {
   const [histIdx, setHistIdx] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const isMounted = useRef(false);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (!isMounted.current) { isMounted.current = true; return; }
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, [lines]);
 
   const run = (raw: string) => {
@@ -142,7 +144,7 @@ export default function Terminal() {
             </div>
             <div className="flex flex-1 items-center justify-center gap-1.5">
               <TermIcon size={11} className="text-white/25" />
-              <span className="font-mono text-xs text-white/25">alexchen — zsh</span>
+              <span className="font-mono text-xs text-white/25">oltihashani — zsh</span>
             </div>
           </div>
 
