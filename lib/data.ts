@@ -110,6 +110,7 @@ export const projects: Project[] = [
       'A multi-page school website built from scratch with semantic HTML, custom CSS layouts, and vanilla JavaScript interactivity. Demonstrates mastery of core web fundamentals before moving to frameworks.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     category: 'Web',
+    liveUrl: 'https://gjimnazimatematikor.com',
     githubUrl: 'https://github.com/OltiHash/School-Website',
     featured: false,
     features: [

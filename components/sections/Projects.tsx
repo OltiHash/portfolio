@@ -98,6 +98,20 @@ export default function Projects() {
   );
 }
 
+const BACKEND_TECH = new Set([
+  'Node.js', 'Python', 'Go', 'Rust', 'Java', 'PHP', 'Ruby', 'C#', '.NET',
+  'Express', 'FastAPI', 'Django', 'Flask', 'NestJS', 'Hono',
+  'PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQLite', 'Supabase', 'Firebase',
+  'GraphQL', 'REST APIs', 'Prisma', 'Drizzle', 'Bull MQ',
+  'OpenAI API', 'Anthropic API',
+]);
+
+function techChipClass(t: string) {
+  if (BACKEND_TECH.has(t))
+    return 'border-green-500/20 bg-green-500/[0.06] text-green-400/80';
+  return 'border-white/[0.06] bg-white/[0.03] text-white/40';
+}
+
 function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
   return (
     <motion.button
@@ -123,17 +137,17 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
           </h3>
           <p className="mb-5 text-sm leading-relaxed text-white/45">{project.description}</p>
           <div className="flex flex-wrap gap-2">
-            {project.tech.slice(0, 5).map((t) => (
+            {project.tech.slice(0, 6).map((t) => (
               <span
                 key={t}
-                className="rounded-lg border border-white/[0.06] bg-white/[0.03] px-2 py-1 text-xs text-white/40"
+                className={`rounded-lg border px-2 py-1 text-xs ${techChipClass(t)}`}
               >
                 {t}
               </span>
             ))}
-            {project.tech.length > 5 && (
+            {project.tech.length > 6 && (
               <span className="rounded-lg border border-white/[0.06] bg-white/[0.03] px-2 py-1 text-xs text-white/25">
-                +{project.tech.length - 5}
+                +{project.tech.length - 6}
               </span>
             )}
           </div>
@@ -210,7 +224,11 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="rounded-lg border border-blue-500/20 bg-blue-500/8 px-3 py-1.5 text-sm text-blue-300"
+                className={`rounded-lg border px-3 py-1.5 text-sm ${
+                  BACKEND_TECH.has(t)
+                    ? 'border-green-500/25 bg-green-500/8 text-green-300'
+                    : 'border-blue-500/20 bg-blue-500/8 text-blue-300'
+                }`}
               >
                 {t}
               </span>
