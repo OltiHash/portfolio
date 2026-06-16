@@ -29,6 +29,15 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
+      <head>
+        {/* Disable scroll restoration before any JS runs so the browser
+            never jumps to a previously remembered scroll position */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `history.scrollRestoration='manual';window.scrollTo(0,0);`,
+          }}
+        />
+      </head>
       <body className="min-h-screen bg-[#060606] text-white">{children}</body>
     </html>
   );

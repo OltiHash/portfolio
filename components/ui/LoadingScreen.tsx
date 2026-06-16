@@ -1,6 +1,12 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { personalInfo } from '@/lib/data';
+
+const initials = personalInfo.name
+  .split(' ')
+  .map((n) => n[0])
+  .join('');
 
 interface Props {
   onComplete: () => void;
@@ -55,7 +61,7 @@ export default function LoadingScreen({ onComplete }: Props) {
           transition={{ type: 'spring', stiffness: 200, damping: 15 }}
         >
           <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 shadow-2xl shadow-blue-500/40">
-            <span className="text-3xl font-black text-white tracking-tight">AC</span>
+            <span className="text-3xl font-black text-white tracking-tight">{initials}</span>
             <div className="absolute -inset-px rounded-2xl border border-white/20" />
           </div>
         </motion.div>
