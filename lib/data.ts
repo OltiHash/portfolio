@@ -68,7 +68,7 @@ export const projects: Project[] = [
       'AI-powered website builder SaaS — describe your site in plain English and get a fully functional, styled website in seconds.',
     longDescription:
       'BuildAI is a SaaS platform that lets anyone generate production-ready websites through natural language prompts. It combines LLM code generation with a live preview editor, allowing users to iteratively refine the output without writing a single line of code.',
-    tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'OpenAI API', 'Vercel'],
+    tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Prisma', 'Redis', 'OpenAI API', 'Vercel'],
     category: 'AI',
     liveUrl: 'https://aibuilder-phi.vercel.app',
     githubUrl: 'https://github.com/OltiHash/buildai',
