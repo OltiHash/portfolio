@@ -9,9 +9,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion)
-[![Netlify](https://img.shields.io/badge/Netlify-deployed-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://oltihash-portfolio.netlify.app)
+[![Vercel](https://img.shields.io/badge/Vercel-deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-oltihashani2-2808s-projects.vercel.app)
 
-**[Live Site →](https://oltihash-portfolio.netlify.app)**
+**[Live Site →](https://portfolio-oltihashani2-2808s-projects.vercel.app)**
 
 </div>
 
@@ -85,21 +85,16 @@ types/index.ts         # Shared TypeScript interfaces
 
 ## Deployment
 
-Exported as a static site via `next build` and hosted on Netlify.
+Deployed on Vercel with native Next.js support — no static export needed. GitHub is connected so every `git push` triggers an automatic redeploy.
 
-```toml
-# netlify.toml
-[build]
-  command = "npm run build"
-  publish = "out"
+```bash
+vercel --prod
 ```
-
-Contact form submissions are captured by Netlify Forms — zero backend required.
 
 ---
 
 <div align="center">
 
-Made by [Olti Hashani](https://oltihash-portfolio.netlify.app) · Prishtina, Kosovo
+Made by [Olti Hashani](https://portfolio-oltihashani2-2808s-projects.vercel.app) · Prishtina, Kosovo
 
 </div>

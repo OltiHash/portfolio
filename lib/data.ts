@@ -111,7 +111,7 @@ export const projects: Project[] = [
     tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express', 'SQLite', 'JWT Auth'],
     category: 'Web',
     liveUrl: 'https://gjimnazimatematikor.com',
-    githubUrl: 'https://github.com/OltiHash/School-Website',
+    githubUrl: 'https://github.com/OltiHash/gjsm-website',
     featured: false,
     features: [
       'Multi-page semantic HTML/CSS/JS frontend',
