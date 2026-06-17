@@ -90,7 +90,7 @@ export const projects: Project[] = [
       'A world-class developer portfolio featuring glassmorphism design, Framer Motion animations, an interactive terminal, particle effects, and a custom cursor. Built with Next.js 16 static export and deployed on Netlify.',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion', 'Netlify'],
     category: 'Web',
-    liveUrl: 'https://oltihash-portfolio.netlify.app',
+    liveUrl: 'https://oltihashani.vercel.app',
     githubUrl: 'https://github.com/OltiHash/portfolio',
     featured: false,
     features: [

@@ -9,9 +9,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion)
-[![Vercel](https://img.shields.io/badge/Vercel-deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-oltihashani2-2808s-projects.vercel.app)
+[![Vercel](https://img.shields.io/badge/Vercel-deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://oltihashani.vercel.app)
 
-**[Live Site →](https://portfolio-oltihashani2-2808s-projects.vercel.app)**
+**[Live Site →](https://oltihashani.vercel.app)**
 
 </div>
 
@@ -26,24 +26,24 @@
 - **Framer Motion animations** — staggered entrance on every section, triggered on scroll with `viewport: once`
 - **Interactive terminal** — functional CLI with `help`, `about`, `projects`, `skills`, `contact`, and `clear`
 - **Animated stat counters** — numbers count up from zero when scrolled into view
-- **Contact form** — powered by Netlify Forms; messages delivered directly to email
+- **Contact form** — validated form with success state
 - **Fully responsive** — optimised for mobile, tablet, and desktop
 
 ## Tech Stack
 
 | Layer | Technology |
 |---|---|
-| Framework | Next.js 16 (App Router, `output: 'export'`) |
+| Framework | Next.js 16 (App Router) |
 | UI Library | React 19 |
 | Language | TypeScript 5 (strict) |
 | Styling | Tailwind CSS v4 (CSS-first config, no `tailwind.config`) |
 | Animations | Framer Motion 11 |
 | Icons | lucide-react + custom inline SVG brand icons |
-| Deployment | Netlify — static export served from `out/` |
+| Deployment | Vercel (native Next.js, auto-deploy on push) |
 
 ## Sections
 
-`Hero` · `About` · `Skills` · `Projects` · `Experience` · `Stats` · `Terminal` · `Contact` · `Footer`
+`Hero` · `About` · `Skills` · `Projects` · `Extras` · `Stats` · `Terminal` · `Contact` · `Footer`
 
 ## Getting Started
 
@@ -74,7 +74,7 @@ components/
   Portfolio.tsx        # Client root; manages loading state
   ui/                  # CustomCursor, LoadingScreen, SocialIcons
   layout/              # Navbar, Footer
-  sections/            # Hero, About, Skills, Projects, Experience,
+  sections/            # Hero, About, Skills, Projects, Extras,
                        #   Stats, Terminal, Contact
 
 lib/
@@ -95,6 +95,6 @@ vercel --prod
 
 <div align="center">
 
-Made by [Olti Hashani](https://portfolio-oltihashani2-2808s-projects.vercel.app) · Prishtina, Kosovo
+Made by [Olti Hashani](https://oltihashani.vercel.app) · Prishtina, Kosovo
 
 </div>
