@@ -103,7 +103,7 @@ const BACKEND_TECH = new Set([
   'Express', 'FastAPI', 'Django', 'Flask', 'NestJS', 'Hono',
   'PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQLite', 'Supabase', 'Firebase',
   'GraphQL', 'REST APIs', 'Prisma', 'Drizzle', 'Bull MQ',
-  'OpenAI API', 'Anthropic API',
+  'OpenAI API', 'Anthropic API', 'JWT Auth', 'bcryptjs', 'Multer',
 ]);
 
 function techChipClass(t: string) {
