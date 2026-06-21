@@ -82,6 +82,28 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: '4',
+    title: 'OEYA Bikes',
+    description:
+      'Full-stack e-commerce platform for premium bicycles — product catalog, cart, checkout, AI chat assistant, and a complete admin dashboard.',
+    longDescription:
+      'OEYA Bikes is a production-ready e-commerce platform built with Next.js 16 and TypeScript. It features a rich product catalog with filters and quick-view, a persistent cart, checkout flow, wishlist, and product comparison. The admin panel covers orders, customers, inventory, marketing (coupons), reports, and full product management with role-based Admin/Staff access.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Prisma', 'Zustand', 'Framer Motion', 'Vercel'],
+    category: 'Web',
+    liveUrl: 'https://bike-ecommerce-psi.vercel.app',
+    githubUrl: 'https://github.com/OltiHash/bike-ecommerce',
+    featured: false,
+    features: [
+      'Product catalog with filtering, sorting, and quick-view modal',
+      'Cart, wishlist, and side-by-side product comparison',
+      'AI-powered chat assistant for customer support',
+      'Full admin dashboard — orders, customers, inventory, marketing',
+      'Role-based access control (Admin / Staff)',
+      'Fully responsive with mobile-optimised navigation',
+      'Deployed to Vercel with Next.js 16 App Router',
+    ],
+  },
+  {
     id: '2',
     title: 'Developer Portfolio',
     description:
